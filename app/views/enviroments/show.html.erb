@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Enviroment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Enviroment %></h1>
+</div>
 
-<p>
-  <strong>Descrizione:</strong>
-  <%= @enviroment.descrizione %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:descrizione) %></dt>
+      <dd><pre class="prettyprint"><%= @enviroment.descrizione %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+      <dd><pre class="prettyprint"><%= @enviroment.address %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @enviroment.address %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              enviroments_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_enviroment_path(@enviroment), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              enviroment_path(@enviroment),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Project:</strong>
-  <%= @enviroment.project %>
-</p>
-
-<p>
-  <strong>Issue:</strong>
-  <%= @enviroment.issue %>
-</p>
-
-<%= link_to 'Edit', edit_enviroment_path(@enviroment) %> |
-<%= link_to 'Back', enviroments_path %>

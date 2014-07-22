@@ -1,6 +1,5 @@
-<h1>Editing enviroment</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @enviroment %> |
-<%= link_to 'Back', enviroments_path %>
+<%- model_class = Enviroment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Enviroment %></h1>
+</div>
+<%= render :partial => 'form' %>
