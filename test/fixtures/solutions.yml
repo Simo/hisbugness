@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  implemented: false
+  implemented_at: 2014-07-22 10:17:49
+  effort: MyString
+  solved: false
+  solved_at: 2014-07-22 10:17:49
+
+two:
+  implemented: false
+  implemented_at: 2014-07-22 10:17:49
+  effort: MyString
+  solved: false
+  solved_at: 2014-07-22 10:17:49
