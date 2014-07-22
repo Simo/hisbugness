@@ -4,4 +4,5 @@ class Issue < ActiveRecord::Base
   has_one :browser
   has_one :priority
   has_one :complexity
+  has_one :user
 end
