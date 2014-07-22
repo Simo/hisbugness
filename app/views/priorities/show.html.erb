@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @priority.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @priority.image %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @priority.color %>
+</p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @priority.issue %>
+</p>
+
+<%= link_to 'Edit', edit_priority_path(@priority) %> |
+<%= link_to 'Back', priorities_path %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :priorities
+
   resources :complexities
 
   resources :solutions
