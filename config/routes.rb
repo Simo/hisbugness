@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :enviroments
+
   resources :issues
 
   resources :priorities
