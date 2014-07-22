@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @complexity.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @complexity.image %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @complexity.color %>
+</p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @complexity.issue %>
+</p>
+
+<%= link_to 'Edit', edit_complexity_path(@complexity) %> |
+<%= link_to 'Back', complexities_path %>

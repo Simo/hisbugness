@@ -1,0 +1,33 @@
+<%= form_for(@complexity) do |f| %>
+  <% if @complexity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@complexity.errors.count, "error") %> prohibited this complexity from being saved:</h2>
+
+      <ul>
+      <% @complexity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_id %><br>
+    <%= f.text_field :issue_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
