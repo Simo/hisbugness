@@ -5,4 +5,5 @@ class Issue < ActiveRecord::Base
   has_one :priority
   has_one :complexity
   has_one :user
+  has_one :status
 end
