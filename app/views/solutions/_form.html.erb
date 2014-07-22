@@ -1,37 +1,40 @@
-<%= form_for(@solution) do |f| %>
-  <% if @solution.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@solution.errors.count, "error") %> prohibited this solution from being saved:</h2>
-
-      <ul>
-      <% @solution.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @solution, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :implemented, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :implemented, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :implemented_at, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :implemented_at, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :effort, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :effort, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :solved, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :solved, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :solved_at, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :solved_at, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :implemented %><br>
-    <%= f.check_box :implemented %>
-  </div>
-  <div class="field">
-    <%= f.label :implemented_at %><br>
-    <%= f.datetime_select :implemented_at %>
-  </div>
-  <div class="field">
-    <%= f.label :effort %><br>
-    <%= f.text_field :effort %>
-  </div>
-  <div class="field">
-    <%= f.label :solved %><br>
-    <%= f.check_box :solved %>
-  </div>
-  <div class="field">
-    <%= f.label :solved_at %><br>
-    <%= f.datetime_select :solved_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  solutions_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
