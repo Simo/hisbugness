@@ -1,4 +1,5 @@
 ActiveAdmin.register Browser do
+  permit_params :name, :version
 
   
   # See permitted parameters documentation:
