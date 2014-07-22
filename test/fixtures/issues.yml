@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 
+  insert_date: 2014-07-22 10:17:57
+  component: MyString
+  feature: MyString
+  description: MyString
+  note: MyString
+  accepted: false
+  accepted_at: 2014-07-22 10:17:57
+
+two:
+  project_id: 
+  insert_date: 2014-07-22 10:17:57
+  component: MyString
+  feature: MyString
+  description: MyString
+  note: MyString
+  accepted: false
+  accepted_at: 2014-07-22 10:17:57
