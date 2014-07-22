@@ -1,44 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Issue -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Issue %></h1>
+</div>
 
-<p>
-  <strong>Project:</strong>
-  <%= @issue.project %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:insert_date) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.insert_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:component) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.component %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:feature) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.feature %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:note) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.note %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:accepted) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.accepted %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:accepted_at) %></dt>
+      <dd><pre class="prettyprint"><%= @issue.accepted_at %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Insert date:</strong>
-  <%= @issue.insert_date %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              issues_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_issue_path(@issue), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              issue_path(@issue),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Component:</strong>
-  <%= @issue.component %>
-</p>
-
-<p>
-  <strong>Feature:</strong>
-  <%= @issue.feature %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @issue.description %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @issue.note %>
-</p>
-
-<p>
-  <strong>Accepted:</strong>
-  <%= @issue.accepted %>
-</p>
-
-<p>
-  <strong>Accepted at:</strong>
-  <%= @issue.accepted_at %>
-</p>
-
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>

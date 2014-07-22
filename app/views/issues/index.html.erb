@@ -1,24 +1,26 @@
-<h1>Listing issues</h1>
-
-<table>
+<%- model_class = Issue -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Issue %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Project</th>
-      <th>Insert date</th>
-      <th>Component</th>
-      <th>Feature</th>
-      <th>Description</th>
-      <th>Note</th>
-      <th>Accepted</th>
-      <th>Accepted at</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:insert_date) %></th>
+      <th><%= model_class.human_attribute_name(:component) %></th>
+      <th><%= model_class.human_attribute_name(:feature) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:note) %></th>
+      <th><%= model_class.human_attribute_name(:accepted) %></th>
+      <th><%= model_class.human_attribute_name(:accepted_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @issues.each do |issue| %>
       <tr>
-        <td><%= issue.project %></td>
+        <td><%= issue.id %></td>
         <td><%= issue.insert_date %></td>
         <td><%= issue.component %></td>
         <td><%= issue.feature %></td>
@@ -26,14 +28,21 @@
         <td><%= issue.note %></td>
         <td><%= issue.accepted %></td>
         <td><%= issue.accepted_at %></td>
-        <td><%= link_to 'Show', issue %></td>
-        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-        <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l issue.created_at, format: :long %></td>
+        <td>
+          <%= link_to issue_path(issue), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to issue_path(issue), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Issue', new_issue_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_issue_path,
+            :class => 'btn btn-primary' %>
