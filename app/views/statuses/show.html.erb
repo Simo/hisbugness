@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @status.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @status.image %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @status.color %>
+</p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @status.issue %>
+</p>
+
+<%= link_to 'Edit', edit_status_path(@status) %> |
+<%= link_to 'Back', statuses_path %>
