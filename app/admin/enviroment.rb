@@ -1,4 +1,5 @@
 ActiveAdmin.register Enviroment do
+  permit_params :descrizione, :address
 
   
   # See permitted parameters documentation:
