@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @browser.name %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @browser.version %>
+</p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @browser.issue %>
+</p>
+
+<%= link_to 'Edit', edit_browser_path(@browser) %> |
+<%= link_to 'Back', browsers_path %>

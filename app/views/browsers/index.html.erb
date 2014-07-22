@@ -1,0 +1,29 @@
+<h1>Listing browsers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>Issue</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @browsers.each do |browser| %>
+      <tr>
+        <td><%= browser.name %></td>
+        <td><%= browser.version %></td>
+        <td><%= browser.issue %></td>
+        <td><%= link_to 'Show', browser %></td>
+        <td><%= link_to 'Edit', edit_browser_path(browser) %></td>
+        <td><%= link_to 'Destroy', browser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Browser', new_browser_path %>
