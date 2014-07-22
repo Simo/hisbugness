@@ -1,4 +1,5 @@
 ActiveAdmin.register Complexity do
+  permit_params :description, :image, :color
 
   
   # See permitted parameters documentation:
