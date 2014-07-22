@@ -1,31 +1,40 @@
-<h1>Listing priorities</h1>
-
-<table>
+<%- model_class = Priority -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Priority %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Color</th>
-      <th>Issue</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
+      <th><%= model_class.human_attribute_name(:color) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @priorities.each do |priority| %>
       <tr>
+        <td><%= priority.id %></td>
         <td><%= priority.description %></td>
         <td><%= priority.image %></td>
         <td><%= priority.color %></td>
-        <td><%= priority.issue %></td>
-        <td><%= link_to 'Show', priority %></td>
-        <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
-        <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l priority.created_at, format: :long %></td>
+        <td>
+          <%= link_to priority_path(priority), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to priority_path(priority), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Priority', new_priority_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_priority_path,
+            :class => 'btn btn-primary' %>
