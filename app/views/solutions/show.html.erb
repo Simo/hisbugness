@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Implemented:</strong>
+  <%= @solution.implemented %>
+</p>
+
+<p>
+  <strong>Implemented at:</strong>
+  <%= @solution.implemented_at %>
+</p>
+
+<p>
+  <strong>Effort:</strong>
+  <%= @solution.effort %>
+</p>
+
+<p>
+  <strong>Solved:</strong>
+  <%= @solution.solved %>
+</p>
+
+<p>
+  <strong>Solved at:</strong>
+  <%= @solution.solved_at %>
+</p>
+
+<%= link_to 'Edit', edit_solution_path(@solution) %> |
+<%= link_to 'Back', solutions_path %>
