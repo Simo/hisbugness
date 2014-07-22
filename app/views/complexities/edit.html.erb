@@ -1,6 +1,5 @@
-<h1>Editing complexity</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @complexity %> |
-<%= link_to 'Back', complexities_path %>
+<%- model_class = Complexity -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Complexity %></h1>
+</div>
+<%= render :partial => 'form' %>
