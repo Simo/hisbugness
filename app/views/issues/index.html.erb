@@ -1,0 +1,39 @@
+<h1>Listing issues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Insert date</th>
+      <th>Component</th>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Note</th>
+      <th>Accepted</th>
+      <th>Accepted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @issues.each do |issue| %>
+      <tr>
+        <td><%= issue.project %></td>
+        <td><%= issue.insert_date %></td>
+        <td><%= issue.component %></td>
+        <td><%= issue.feature %></td>
+        <td><%= issue.description %></td>
+        <td><%= issue.note %></td>
+        <td><%= issue.accepted %></td>
+        <td><%= issue.accepted_at %></td>
+        <td><%= link_to 'Show', issue %></td>
+        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+        <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Issue', new_issue_path %>

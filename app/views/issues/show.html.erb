@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @issue.project %>
+</p>
+
+<p>
+  <strong>Insert date:</strong>
+  <%= @issue.insert_date %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @issue.component %>
+</p>
+
+<p>
+  <strong>Feature:</strong>
+  <%= @issue.feature %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @issue.description %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @issue.note %>
+</p>
+
+<p>
+  <strong>Accepted:</strong>
+  <%= @issue.accepted %>
+</p>
+
+<p>
+  <strong>Accepted at:</strong>
+  <%= @issue.accepted_at %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>
